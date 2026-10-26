@@ -80,8 +80,8 @@ class Averager:
         x: float
             the number to put into the list.
         """
-        raise NotImplementedError("This is an exercise for the student")
-        # ^ replace this line with your code
+        self.list[self.index] = x
+        self.index = (self.index + 1) % len(self.list)
         
     def get(self):
         """Find the average of all the numbers in the list and return it.
@@ -91,8 +91,7 @@ class Averager:
         float:
             the average of all the items in the list.
         """
-        raise NotImplementedError("This is an exercise for the student")
-        # ^ replace this line with your code
+        return sum(self.list) / len(self.list)
 
         # Hints:
         # - the built-in function sum is available
